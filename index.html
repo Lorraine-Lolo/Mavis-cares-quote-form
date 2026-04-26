@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <title>MAVIS CARES and NURSES </title>
     <link rel="stylesheet" href="./style.css">
-
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJLGELT80S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LJLGELT80S');
+</script>
   </head>
     
   <body>
@@ -78,7 +85,26 @@
   </footer>
 </div>
     <script  src="./script.js"></script>
+<script>
+  // Tracks form start for drop-off rate
+  document.getElementById('contactForm')?.addEventListener('input', function() {
+    gtag('event', 'form_start', {
+      'event_category': 'Mavis Cares Lead',
+      'event_label': 'Contact Form'
+    });
+  }, { once: true });
 
+  function trackMavisLead() {
+    gtag('event', 'form_submit', {
+      'event_category': 'Mavis Cares Lead',
+      'event_label': 'Form Completed'
+    });
+    gtag('event', 'whatsapp_click', {
+      'event_category': 'Mavis Cares Lead',
+      'event_label': 'WhatsApp Click'
+    });
+  }
+</script>
   </body>
   
 </html>
