@@ -10,3 +10,12 @@ Mobile-first WhatsApp quote form for Mavis Cares & Nurses. Built with HTML, CSS,
 
 ### Tech Stack
 HTML | CSS | Vanilla JS | GitHub Pages | Google Analytics 4
+
+
+---
+### 🇿🇦 NEW: Live Loadshedding Checker
+Real-time SA loadshedding tracker for Mid-Ennerdale using EskomSePush API.
+
+**Built with:** JavaScript ES6, REST APIs, Async/Await, Error Handling, GitHub Pages  
+**Live Demo:** [Check Loadshedding Times](./loadshedding-checker/index.html)  
+**Why:** Solving real SA problems while learning API integration on mobile
