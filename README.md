@@ -17,5 +17,5 @@ HTML | CSS | Vanilla JS | GitHub Pages | Google Analytics 4
 Real-time SA loadshedding tracker for Mid-Ennerdale using EskomSePush API.
 
 **Built with:** JavaScript ES6, REST APIs, Async/Await, Error Handling, GitHub Pages  
-**Live Demo:** [Check Loadshedding Times](./loadshedding-checker/index.html)  
+**Live Demo:** [Check Loadshedding Times](https://lorraine-lolo.github.io/Mavis-cares-quote-form/loadshedding-checker/index.html)
 **Why:** Solving real SA problems while learning API integration on mobile
