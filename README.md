@@ -14,7 +14,6 @@ HTML | CSS | Vanilla JS | GitHub Pages | Google Analytics 4
 
 ---
 
-
-**Built with:** JavaScript ES6, REST APIs, Async/Await, Error Handling, GitHub Pages  
-**Live Demo:** [Check Loadshedding Times](https://lorraine-lolo.github.io/Mavis-cares-quote-form/loadshedding-checker/index.html)
-**Why:** Solving real SA problems while learning API integration on mobile
+   **Built with:** HTML, CSS, Vanilla JS, GitHub Pages, Google Analytics 4
+   **Live Demo:** [Mavis Cares Quote Form](https://lorraine-lolo.github.io/Mavis-cares-quote-form/)
+   **Why:** Auto-generates WhatsApp quotes for caregivers to reduce admin time
