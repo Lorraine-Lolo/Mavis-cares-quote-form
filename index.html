@@ -1,137 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mavis Cares & Nurses | Compassionate Home Care Johannesburg & Pretoria</title>
+<meta name="description" content="Mavis Cares & Nurses - Professional caregivers for Autism, Dementia, Elderly, Frail, Live-in, Palliative Care in Johannesburg, Pretoria, Lenasia, Soweto. Call 060 342 9454">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#f8fbff;color:#333;line-height:1.7}
+.social-top{background:#0a1f4d;color:#fff;padding:8px 5%;display:flex;justify-content:space-between;font-size:13px;flex-wrap:wrap}
+.social-top a{color:#fff;margin-left:12px;text-decoration:none}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.08);position:sticky;top:0;z-index:1000}
+.logo{font-weight:900;color:#0d2e6d;font-size:20px}
+nav ul{list-style:none;display:flex;gap:24px;align-items:center}
+nav ul li{position:relative}
+nav ul li a{text-decoration:none;color:#0d2e6d;font-weight:700;display:flex;gap:6px;align-items:center;font-size:15px}
+.dropdown{position:absolute;top:100%;left:0;background:#fff;width:280px;box-shadow:0 10px 30px rgba(0,0,0,0.15);border-radius:12px;padding:10px 0;opacity:0;visibility:hidden;transform:translateY(10px);transition:0.3s;list-style:none;display:block;z-index:999}
+nav ul li:hover.dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown li a{padding:11px 18px;display:block;font-weight:500;color:#4a5a73;font-size:14px;border-bottom:1px solid #f1f4f8}
+.dropdown li a:hover{background:#eef5ff;color:#1a4da1;padding-left:22px}
 
-  <head>
-    <meta charset="UTF-8">
-    <title>Mavis Cares and Nurses | Vetted Caregivers & Nurses in Johannesburg</title>
-    
-    <link rel="stylesheet" href="./style.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJLGELT80S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LJLGELT80S');
-</script>
-  </head>
-    
-  <body>
-  <div class="container">
-  <header>
-    <img src="https://i.postimg.cc/6pdNDG84/20260319-232349-0000.png" alt="Mavis Cares and Nurses Logo" class="logo">
-    <h1>MAVIS CARES AND NURSES</h1>
-    <p class="tagline">Vetted Caregivers & Nurses across Johannesburg | 24-48hr Emergency Placement</p>
-  <p><strong>Serving:</strong> Johannesburg, Pretoria and surrounding areas</p>
-<p><strong>✓ Night shift, frail care, dementia support</strong> | <strong>✓ Personally vetted staff</strong></p>
-  </header>
+#mavis-hero{position:relative;height:85vh;overflow:hidden;background:#eef3ff;display:flex;align-items:center;justify-content:center}
+.mavis-slide{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#eef3ff;opacity:0;transition:opacity 1s}
+.mavis-slide.active{opacity:1}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,31,77,0.85) 0%,rgba(10,31,77,0.45) 50%,rgba(10,31,77,0.15) 100%);z-index:1}
+.hero-content{position:absolute;top:50%;left:5%;transform:translateY(-50%);color:#fff;max-width:620px;z-index:2}
+.hero-content h1{font-size:44px;font-weight:900;line-height:1.1;margin-bottom:12px}
+.btn{padding:13px 28px;border-radius:30px;text-decoration:none;font-weight:800;display:inline-block;margin:8px 8px 0 0}
+.btn-blue{background:#1a4da1;color:#fff}
+.btn-white{background:#fff;color:#0d2e6d}
+.trust-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.trust-badge{background:#fff;color:#0d2e6d;padding:8px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
+.dot{width:11px;height:11px;background:rgba(255,255,255,0.6);border-radius:50%;cursor:pointer}
+.dot.active{background:#fff}
 
-  <section class="about">
-    <h2>About Us</h2>
-    Mavis Cares and Nurses is a South African home-based care agency providing professional nursing and caregiving services in Johannesburg & Pretoria. Our qualified team supports families with dignity, reliability, and 24/7 professionalism.
-  </section>
+section{padding:80px 5%;max-width:1200px;margin:0 auto}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:36px;color:#0d2e6d;font-weight:900}
+.section-title p{color:#647a90;max-width:700px;margin:10px auto 0}
+.care-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.care-box{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08);transition:0.3s;text-align:center}
+.care-box:hover{transform:translateY(-8px)}
+.care-box img{width:100%;height:230px;object-fit:cover}
+.care-icon{width:84px;height:84px;background:linear-gradient(135deg,#eaffff,#d6eeff);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:-42px auto 12px;position:relative;box-shadow:0 4px 12px rgba(0,0,0,0.12)}
+.care-icon i{font-size:34px;color:#1a4da1}
+.care-label{background:#fff;padding:7px 18px;border-radius:30px;box-shadow:0 3px 10px rgba(0,0,0,0.08);display:inline-block;font-weight:800;color:#0d2e6d;margin:8px 0 18px}
+.about-flex{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.about-flex div{flex:1;min-width:300px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:30px;text-align:center}
+.step{background:#fff;padding:28px 20px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.08)}
+.step span{width:56px;height:56px;background:#1a4da1;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;margin:0 auto 12px}
+.reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:30px}
+.review{background:#fff;padding:22px;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,0.07)}
+.review i{color:#ffb400}
+.contact-wrap{display:grid;grid-template-columns:1.2fr 0.8fr;gap:30px}
+.contact-box{background:#1a4da1;color:#fff;padding:30px;border-radius:20px}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #dbe6ff;margin:8px 0;font-size:14px}
+footer{background:#0a1f4d;color:#cbd5e1;text-align:center;padding:22px;font-size:12px}
+.float-whatsapp{position:fixed;bottom:24px;right:24px;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;z-index:999}
+@media(max-width:900px){.care-grid,.steps,.reviews,.contact-wrap{grid-template-columns:1fr}.hero-content h1{font-size:32px}#mavis-hero{height:75vh}}
+</style>
+</head>
+<body>
 
-  <section class="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>Post-operative & frail care</li>
-      <li>Elderly care & companionship</li>
-      <li>Palliative & chronic illness support</li>
-      <li>Medication management</li>
-    </ul>
-  </section>
-  <section id="reviews">
-    <h3>Client Reviews</h3>
-    <p><strong>We’re a new agency focused on earning your 5-star review.</strong></p>
-    <p>Your family’s experience matters to us. After we provide care for your loved one, we’d be honoured if you shared your feedback.</p>
-    <!-- Elfsight Testimonials Slider | Mavis Cares and Nurses Reviews -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-3654297b-8bbe-4250-82a2-ff6300b70719" data-elfsight-app-lazy></div>
-  </section>
-
-  <section class="key-details">
-    <h2>Key Details</h2>
-    <ul>
-      <li><strong>Location:</strong> Based in Lenasia, Gauteng. Service areas: Johannesburg & Pretoria including Sandton, Fourways, Rosebank, Midrand, Bedfordview, Winchester Hills, Lenasia.</li>
-      <li><strong>Services:</strong> Home-based care, nursing, and carer support for elderly or ill individuals.</li>
-      <li><strong>Phone:</strong> <a href="tel:+27603429454">+27603429454</a></li>
-      <li><strong>WhatsApp:</strong> <a href="https://wa.me/27603429454">+27 60 342 9454</a> — Chat with us directly</li>
-      <li><strong>Contact Person:</strong> Lorraine </li>
-      <li><strong>Hours:</strong> 24-hour care available, 7 days a week</li>
-    </ul>
-  </section>
-  
-      <section id="quote-section">
-      <div class="quote-box">
-        <h3>Get a Care Estimate</h3>
-        <p>Select your needs and we’ll send you a custom quote:</p>
-  <p style="background:#e8f5e9; color:#2e7d32; padding:12px; border-radius:8px; font-weight:bold; text-align:center; margin-bottom:15px;">⚡ Free quote in 2 minutes. No commitment.</p>
-        <label>Service Type:</label>
-        <select id="service">
-          <option value="">Choose a service...</option>
-          <option value="Day Care">Day Care Services</option>
-          <option value="24hr Care">24-Hour Home Nursing</option>
-          <option value="Companion">Companion Care</option>
-          <option value="Post-Op">Post-Operative Care</option>
-        </select>
-
-        <label>How many days per week?</label>
-        <input type="number" id="days" placeholder="e.g. 5" min="1" max="7">
-
-        <label>Your WhatsApp Number:</label>
-        <input type="tel" id="phone" placeholder="e.g. 082 123 4567">
-
-           <button onclick="trackMavisLead(); requestQuote()">Get Quote via WhatsApp</button>
-        
-        <p class="disclaimer">*This is an estimate. Final pricing confirmed after assessment.</p>
-      </div>
-    </section>
-
-  <footer>
-    <p>&copy; 2026 Mavis Cares and Nurses</p>
-    <p>Registered Home Nursing Service | Johannesburg , South Africa</p>
-    <p><a href="mailto:mavis.healthcare.jhb@gmail.com">mavis.healthcare.jhb@gmail.com</a></p>
-  </footer>
+<div class="social-top">
+<div><i class="fa-solid fa-location-dot"></i> Johannesburg, Pretoria | 060 342 9454</div>
+<div><a href="https://facebook.com/MavisCaresandNurses" target="_blank"><i class="fa-brands fa-facebook"></i></a> <a href="https://wa.me/27603429454" target="_blank"><i class="fa-brands fa-whatsapp"></i></a> <a href="https://share.google/WvDL7t2Z0qkpO7O2b" target="_blank"><i class="fa-brands fa-google"></i></a> <a href="https://instagram.com/maviscaresandnurses" target="_blank"><i class="fa-brands fa-instagram"></i></a> <a href="https://x.com/Maviscarenurses" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></div>
 </div>
-    <script  src="./script.js"></script>
-<script>
-  // Tracks form start for drop-off rate
-  document.getElementById('contactForm')?.addEventListener('input', function() {
-    gtag('event', 'form_start', {
-      'event_category': 'Mavis Cares Lead',
-      'event_label': 'Contact Form'
-    });
-  }, { once: true });
+<nav>
+<div class="logo"><i class="fa-solid fa-heart-pulse"></i> Mavis Cares & Nurses</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="#about">About Us</a></li>
+<li><a href="#services">Services <i class="fa-solid fa-chevron-down" style="font-size:12px"></i></a>
+<ul class="dropdown">
+<li><a href="#services">Autism Home Care</a></li>
+<li><a href="#services">Companionship Home Care</a></li>
+<li><a href="#services">Dementia Home Care</a></li>
+<li><a href="#services">Disability Home Care</a></li>
+<li><a href="#services">Elderly Assistance Home Care</a></li>
+<li><a href="#services">Frail Care / Frail Home Care</a></li>
+<li><a href="#services">Home Caregiving Services</a></li>
+<li><a href="#services">Live-In Home Care</a></li>
+<li><a href="#services">Nursing Home Care</a></li>
+<li><a href="#services">Palliative Care</a></li>
+<li><a href="#services">Postoperative Home Care</a></li>
+<li><a href="#services">Relief Home Care</a></li>
+</ul>
+</li>
+<li><a href="#how">How It Works</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-  function trackMavisLead() {
-    gtag('event', 'form_submit', {
-      'event_category': 'Mavis Cares Lead',
-      'event_label': 'Form Completed'
-    });
-    gtag('event', 'whatsapp_click', {
-      'event_category': 'Mavis Cares Lead',
-      'event_label': 'WhatsApp Click'
-    });
-  }
-</script>
-    <div class="review-buttons" style="text-align:center; margin: 40px 0;">
-  <h3 style="margin-bottom:15px;">Leave us a review</h3>
-  
-  <a href="https://www.facebook.com/share/1BKS4rtphj/" target="_blank" style="display:inline-block;padding:12px 20px;background:#1877F2;color:#fff;text-decoration:none;border-radius:6px;font-weight:bold;margin:5px;">
-    Review us on Facebook
-  </a>
-  
-  <a href="https://www.bark.com/en/za/company/mavis-cares-and-nurses/DjL8pb/?show_reviews=true" target="_blank" style="display:inline-block;padding:12px 20px;background:#00B67A;color:#fff;text-decoration:none;border-radius:6px;font-weight:bold;margin:5px;">
-    Review us on Bark
-  </a>
-     <div style="text-align:center; margin: 20px 0;">
-  <a href="https://wa.me/27603429454?text=Hi%20Mavis%20Cares,%20I%20would%20like%20a%20consultation" 
-     target="_blank" 
-     style="display:inline-block;padding:12px 20px;background:#25D366;color:#fff;text-decoration:none;border-radius:6px;font-weight:bold;margin:5px;">
-    Chat on WhatsApp for Consultation
-  </a>
-</div> 
+<div id="mavis-hero">
+<img src="images/hero.jpg" class="mavis-slide active">
+<img src="images/hero1.jpg" class="mavis-slide">
+<img src="images/hero2.jpg" class="mavis-slide">
+<img src="images/hero3.jpg" class="mavis-slide">
+<img src="images/hero4.jpg" class="mavis-slide">
+<img src="images/hero5.jpg" class="mavis-slide">
+<img src="images/hero6.jpg" class="mavis-slide">
+<img src="images/hero7.jpg" class="mavis-slide">
+<img src="images/hero8.jpg" class="mavis-slide">
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<h1>Compassionate Home Care You Can Trust</h1>
+<p>Professional caregivers for your loved ones in Johannesburg, Pretoria, & surrounding areas- 24/7 Same Day Service</p>
+<a href="tel:0603429454" class="btn btn-blue">Call 060 342 9454</a>
+<a href="https://wa.me/27603429454" class="btn btn-white">WhatsApp Us</a>
+<div class="trust-badges">
+<div class="trust-badge"><i class="fa-brands fa-facebook" style="color:#1a4da1"></i> Facebook Rated</div>
+<div class="trust-badge"><i class="fa-solid fa-star" style="color:#ffb400"></i> Google Reviewed</div>
 </div>
-    <script data-goatcounter="https://mavis-lorraine.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-  </body>
-  
+</div>
+<div class="dots" id="dots"></div>
+</div>
+
+<section id="about">
+<div class="section-title"><h2>About Us</h2><p>Why families trust Mavis Cares & Nurses</p></div>
+<div class="about-flex">
+<div>
+<h3 style="color:#0d2e6d;font-size:26px;margin-bottom:10px">Our Story - Named After My Mother, Built with Heart</h3>
+ <p>Mavis Cares & Nurses was born from a daughter's love. Named after my mother, Mavis - a woman who taught me that caring is not a job, it's a calling. We started with one heart: to give every family in Gauteng the kind of care we would want for our own family members. Reliable, affordable, & dignified home care where your loved one is treated as the family they are, not a patient. Based in Lenasia South, we now serve Johannesburg, Pretoria & surrounding areas - with police-cleared, trained caregivers available 24/7.</p><br>
+<p><i class="fa-solid fa-check" style="color:#1a4da1"></i> <b>Police Cleared & Trained Caregivers</b> - Vetted caregivers you can trust<br>
+<i class="fa-solid fa-check" style="color:#1a4da1"></i> <b>24/7 Same-Day Placement</b> - Qualified caregivers available for immediate deployment<br>
+<i class="fa-solid fa-check" style="color:#1a4da1"></i> <b>Affordable Rates</b> - Hourly, daily live-in, & <live-out options<br>
+<i class="fa-solid fa-check" style="color:#1a4da1"></i> <b>Coverage:</b> Johannesburg, Pretoria & surrounding areas</p><br>
+<a href="https://wa.me/27603429454" class="btn btn-blue">Book a Caregiver Today</a>
+</div>
+<div><img src="images/hero2.jpg" style="width:100%;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.12)"></div>
+</div>
+</section>
+<section id="services" style="background:#f0f6ff">
+<div class="section-title"><h2>Specialist Care Services</h2><p>Professional, compassionate caregivers providing dignified care to all families with love & respect</p></div>
+<div class="care-grid">
+<div class="care-box"><img src="images/autism.jpg"><div class="care-icon"><i class="fa-solid fa-puzzle-piece"></i></div><span class="care-label">Autism Care</span><p style="padding:0 18px 18px;font-size:13px;color:#647a90">Patient support for children with autism at home.</p></div>
+<div class="care-box"><img src="images/dementia.jpg"><div class="care-icon"><i class="fa-solid fa-brain"></i></div><span class="care-label">Dementia Care</span><p style="padding:0 18px 18px;font-size:13px;color:#647a90">Specialized dignified care for memory loss.</p></div>
+<div class="care-box"><img src="images/elderly.jpg"><div class="care-icon"><i class="fa-solid fa-person-cane"></i></div><span class="care-label">Elderly Care</span><p style="padding:0 18px 18px;font-size:13px;color:#647a90">Daily assistance for seniors to stay independent.</p></div>
+<div class="care-box"><img src="images/palliative.jpg"><div class="care-icon"><i class="fa-solid fa-heart-pulse"></i></div><span class="care-label">Palliative Care</span><p style="padding:0 18px 18px;font-size:13px;color:#647a90">Comforting end-of-life care with dignity.</p></div>
+<div class="care-box"><img src="images/live-in.jpg"><div class="care-icon"><i class="fa-solid fa-house-chimney-medical"></i></div><span class="care-label">Live-in Home Care</span><p style="padding:0 18px 18px;font-size:13px;color:#647a90">Dedicated caregiver living in your home 24/7.</p></div>
+<div class="care-box"><img src="images/companion.jpg"><div class="care-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><span class="care-label">Companion Care</span><p style="padding:0 18px 18px;font-size:13px;color:#647a90">Friendly companionship and daily help.</p></div>
+</div>
+</section>
+
+<section id="how">
+<div class="section-title"><h2>Why Choose Us / How It Works</h2><p>Book a caregiver in 3 easy steps</p></div>
+<div class="steps">
+<div class="step"><span>1</span><h3>Call / WhatsApp</h3><p>Call 060 342 9454 or WhatsApp. Tell us service needed, location (JHB, Pretoria & surrounding areas) and when you need care.</p></div>
+<div class="step"><span>2</span><h3>We Assess & Match</h3><p>We assess needs and match you with a trained, police-cleared  caregiver near you. Same day service available.</p></div>
+<div class="step"><span>3</span><h3>Care Begins at Home</h3><p>Your dedicated caregiver arrives at your home on time, ready to provide professional ,dignified care with compassionate and respect. Ongoing 24/7 support from our office.</p></div>
+</div>
+</section>
+
+<section id="reviews" style="background:#f0f6ff">
+<div class="section-title"><h2>Reviews / Testimonials</h2><p>What families say about Mavis Cares & Nurses</p></div>
+<div class="reviews">
+<div class="review"><p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p><p><b>"In 2025, when I desperately needed.....</b> - Mr. Westmoreland, Khayalami</p><p style="font-size:12px;color:#647a90;margin-top:6px">Google 5-Star Review - Palliative Care, Johannesburg</p></div>
+<div class="review"><p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p><p><b>"Had a great experience......."</b> - Kundai., Roodeport</p><p style="font-size:12px;color:#647a90;margin-top:6px">Facebook Review - Elderly Care</p></div>
+<div class="review"><p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p><p><b>"We hired Mavis Cares & Nurses....... "</b> - E. Hope, Sandton</p><p style="font-size:12px;color:#647a90;margin-top:6px">Bark Review - Frail Care</p></div>
+<div class="review"><p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p><p><b>"Professional & reliable......."</b> - R.M Lawrie, Krugersdorp</p><p style="font-size:12px;color:#647a90;margin-top:6px">Google Review - Home Caregiving</p></div>
+<div class="review"><p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p><p><b>"I would like to highly reccomend....."</b> - Anna M, Pretoria</p><p style="font-size:12px;color:#647a90;margin-top:6px">Facebook Review - Home Caregiving</p></div>
+<div class="review"><p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p><p><b>"Mavis Cares has a lovely team......."</b> - S. Garvey, Alberton</p><p style="font-size:12px;color:#647a90;margin-top:6px">Google Review - Home Caregiving</p></div>
+
+</div>
+</section>
+
+<section id="contact">
+<div class="section-title"><h2>Contact / Book a Caregiver</h2><p>We are in Lenasia South - Serving Johannesburg & Pretoria</p></div>
+<div class="contact-wrap">
+<div>
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Phone / WhatsApp Number" required>
+<select><option>Service Needed</option><option>Autism Home Care</option><option>Dementia Home Care</option><option>Elderly Care</option><option>Frail Care</option><option>Live-in Home Care</option><option>Palliative Care</option><option>Companionship</option><option>Postoperative Care</option></select>
+<input type="text" placeholder="Location: e.g., Johannesburg, Pretoria">
+<textarea rows="4" placeholder="Tell us about care needed..."></textarea>
+<button type="submit" class="btn btn-blue" style="width:100%;border:none;cursor:pointer">Send Booking Request via WhatsApp</button>
+</form>
+</div>
+<div class="contact-box">
+<h3>Call Us Today</h3><br>
+<p><i class="fa-solid fa-phone"></i> Phone / WhatsApp: <b>060 342 9454</b></p><br>
+<p><i class="fa-solid fa-location-dot"></i> Lenasia South, Gauteng<br>Serving: Johannesburg, Pretoria & Surrounding areas</p><br>
+<p><i class="fa-solid fa-clock"></i> 24/7 Same Day Service</p><br>
+<p><i class="fa-brands fa-facebook"></i> Facebook: Mavis Cares & Nurses</p><br>
+<a href="https://wa.me/27603429454?text=Hi%20Mavis%20Cares,%20I%20need%20a%20caregiver" target="_blank" class="btn btn-white" style="width:100%;text-align:center">Chat on WhatsApp Now</a>
+<br><br>
+<iframe src="https://maps.google.com/maps?q=Lenasia%20South&t=&z=13&ie=UTF8&iwloc=&output=embed" style="width:100%;height:180px;border:0;border-radius:12px"></iframe>
+</div>
+</div>
+</section>
+
+<footer>© 2026 Mavis Cares & Nurses | 060 342 9454 |  Johannesburg, Pretoria | <a href="https://facebook.com/MavisCaresandNurses" style="color:#fff">Facebook</a> | This site will be live at maviscaresandnurses.co.za</footer>
+<a href="https://wa.me/27603429454" class="float-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+const slides=document.querySelectorAll('.mavis-slide');const dotsC=document.getElementById('dots');let cur=0;
+slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i==0?' active':'');d.onclick=()=>go(i);dotsC.appendChild(d)});
+const dots=document.querySelectorAll('.dot');
+function go(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n;slides[cur].classList.add('active');dots[cur].classList.add('active');}
+setInterval(()=>go((cur+1)%slides.length),4500);
+// WhatsApp form
+document.querySelector('form').addEventListener('submit',function(e){e.preventDefault();
+const name=this.querySelector('input[type=text]').value;
+const phone=this.querySelector('input[type=tel]').value;
+const service=this.querySelector('select').value;
+const loc=this.querySelectorAll('input[type=text]')[1].value;
+const msg=this.querySelector('textarea').value;
+const text=`Hi Mavis Cares, I need a caregiver:%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0ALocation: ${loc}%0ADetails: ${msg}`;
+window.open(`https://wa.me/27603429454?text=${text}`,'_blank');
+});
+</script>
+</body>
+</html>
